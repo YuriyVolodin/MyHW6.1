@@ -1,61 +1,62 @@
 package ru.netology.iqa116.stats;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class StatsServiceTest {
 
     @Test
-    public void CashSumm() {
+    public void cashsumm() {
 
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 180;
-        int actual = service.GetTotalSales(sales);
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 180;
+        long actual = service.GetTotalSales(sales);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void MidSumm() {
+    public void midsumm() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 15;
-        int actual = service.MiddleSales(sales);
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 15;
+        long actual = service.MiddleSales(sales);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void MaxSumm() {
+    public void maxsumm() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 6;
-        int actual = service.MaxSales(sales);
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 6;
+        long actual = service.MaxSales(sales);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void LowSumm() {
+    public void lowsumm() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 9;
-        int actual = service.LowSales(sales);
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 9;
+        long actual = service.LowSales(sales);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void LowMiddle() {
+    public void lowmiddle() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 5;
-        int actual = service.MiddleMonthSalesLow(sales);
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 5;
+        long actual = service.MiddleMonthSalesLow(sales);
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void HighMiddle() {
+    public void highmiddle() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int expected = 5;
-        int actual = service.MiddleMonthSalesHigh(sales);
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long expected = 5;
+        long actual = service.MiddleMonthSalesHigh(sales);
         Assertions.assertEquals(expected, actual);
     }
 }
