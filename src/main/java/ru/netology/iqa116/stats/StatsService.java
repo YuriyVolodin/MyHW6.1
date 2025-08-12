@@ -1,62 +1,61 @@
 package ru.netology.iqa116.stats;
 
 public class StatsService {
-    public int GetTotalSales(long[] sales) {
-
-
+    public long getTotalSales(long[] sales) {
         long total = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= 180);{
-            total += sales[i];}
+        for (long sale : sales) {
+            total += sale;
         }
-        return (int) total;
+        return total;
     }
 
-    public int MiddleSales(long[] sales) {
+    public long getMiddleSales(long[] sales) {
         long total1 = 0;
-        long total = GetTotalSales(sales);
+        long total = getTotalSales(sales);
         total1 = total / (sales.length);
-        return (int) total1;
+        return total1;
     }
 
-    public int MaxSales(long[] sales) {
+    public long getMaxSales(long[] sales) {
         int HighMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > sales[HighMonth]){
-                HighMonth = i;}
+            if (sales[i] > sales[HighMonth]) {
+                HighMonth = i;
+            }
         }
         return HighMonth + 1;
     }
 
-    public int LowSales(long[] sales) {
+    public long getLowSales(long[] sales) {
         int LowMonth = 0;
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] <= sales[LowMonth]){
-                LowMonth = i;}
+            if (sales[i] <= sales[LowMonth]) {
+                LowMonth = i;
+            }
         }
         return LowMonth + 1;
     }
 
-    public long MiddleMonthSalesLow(long[] sales) {
-        long total = GetTotalSales(sales);
-        long total1 = total / sales.length;
+    public long countMonthsBelowAverage(long[] sales) {
+        long average = getTotalSales(sales) / sales.length;
         long count = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < total1){
-                count++;}
+        for (long sale : sales) {
+            if (sale < average) {
+                count++;
+            }
         }
-        return (int) count;
+        return count;
     }
 
-    public int MiddleMonthSalesHigh(long[] sales) {
-        long total = GetTotalSales(sales);
-        long total1 = total / sales.length;
+    public long countMonthsAboveAverage(long[] sales) {
+        long average = getTotalSales(sales) / sales.length;
         long count1 = 0;
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > total1){
-                count1++;}
+        for (long sale : sales) {
+            if (sale > average) {
+                count1++;
+            }
         }
-        return (int) count1;
+        return count1;
     }
 }
 
